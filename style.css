@@ -1,3 +1,46 @@
-#map { height: 500px; width: 100%; }
-h1 { color: green;}
-html { background-color: gainsboro;}
+/* Loader - um círculo girando */
+#loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid #f3f3f3; /* Cor do fundo */
+    border-top: 8px solid #4caf50; /* Cor do loader */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite; /* Animação de giro */
+    z-index: 1000;
+  }
+  
+  /* Animação de rotação */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Esconde o loader quando a página estiver carregada */
+  body.loaded #loader {
+    display: none;
+  }
+
+html { background-color: #e8f5e9; /* Verde muito claro */
+       font-family: 'Poppins', sans-serif; /* Fonte moderna */
+       color: #2f4f4f; /* Cinza escuro */
+       padding: 20px;
+       box-sizing: border-box;}
+
+h1 { color: #2e8b57; /* Verde escuro */
+     text-align: center;
+     border: none;
+     font-size: 2em;
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+     margin-bottom: 20px; }
+
+#map { height: 500px;
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #4caf50; /* Verde mais suave */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra elegante */ }
+
+

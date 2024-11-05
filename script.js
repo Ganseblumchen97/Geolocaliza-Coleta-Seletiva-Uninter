@@ -1,3 +1,10 @@
+var iconRecycle = L.icon({
+  iconUrl: 'Icons/recycle-solid.svg', // Caminho para o seu arquivo SVG
+  iconSize: [32, 32], // Tamanho do ícone (ajuste conforme necessário)
+  iconAnchor: [16, 32], // Ponto onde o ícone estará ancorado (ajuste conforme necessário)
+  popupAnchor: [0, -32] // Ponto onde o popup aparecerá em relação ao ícone
+});
+
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function (position) {
     // Obtém a posição atual
@@ -25,7 +32,7 @@ if (navigator.geolocation) {
     ];
 
     pontos.forEach(function (ponto) {
-      L.marker([ponto.lat, ponto.lon]).addTo(map).bindPopup(ponto.descricao);
+      L.marker([ponto.lat, ponto.lon], { icon: iconRecycle }).addTo(map).bindPopup(ponto.descricao);
     });
   }, function () {
     alert("Não foi possível obter sua localização.");
@@ -33,5 +40,10 @@ if (navigator.geolocation) {
 } else {
   alert("Geolocalização não é suportada por este navegador.");
 }
+
+// Remove o loader quando a página estiver completamente carregada
+window.addEventListener('load', function() {
+  document.body.classList.add('loaded');
+});
 
   
