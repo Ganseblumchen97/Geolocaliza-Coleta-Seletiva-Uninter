@@ -3,14 +3,29 @@
 <head>
   <title>Mapa de Coleta Seletiva</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <link rel="stylesheet" href="style.css" /> <!-- Inclusão do arquivo CSS -->
+  <link rel="stylesheet" href="style.css" />
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
-  <div id="loader"></div> <!-- Elemento de carregamento -->
-  <h1>Mapa de Coleta Seletiva</h1>
-  <div id="map"></div> <!-- Div para o mapa -->
+  <header>
+    <h1>Mapa de Coleta Seletiva</h1>
+    <p>Encontre pontos de coleta seletiva próximos a você!</p>
+  </header>
 
-  <script src="script.js"></script> <!-- Inclusão do arquivo JS -->
+  <main>
+    <div id="loading">
+      <div class="spinner"></div>
+      <p>Carregando mapa...</p>
+    </div>
+    
+    <div id="map" style="display: none;"></div>
+  </main>
+
+  <footer>
+    <p>Projeto para Faculdade - Prototipagem de Sistema de Sustentabilidade</p>
+    <p>&copy; 2024 </p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

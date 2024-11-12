@@ -1,46 +1,86 @@
-/* Loader - um círculo girando */
-#loader {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 8px solid #f3f3f3; /* Cor do fundo */
-    border-top: 8px solid #4caf50; /* Cor do loader */
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1s linear infinite; /* Animação de giro */
-    z-index: 1000;
-  }
-  
-  /* Animação de rotação */
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  /* Esconde o loader quando a página estiver carregada */
-  body.loaded #loader {
-    display: none;
-  }
+/* Geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-html { background-color: #e8f5e9; /* Verde muito claro */
-       font-family: 'Poppins', sans-serif; /* Fonte moderna */
-       color: #2f4f4f; /* Cinza escuro */
-       padding: 20px;
-       box-sizing: border-box;}
+body {
+  background-color: #f0f4f1; /* Tom verde-claro */
+  color: #2f4f2f; /* Tom verde-escuro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-h1 { color: #2e8b57; /* Verde escuro */
-     text-align: center;
-     border: none;
-     font-size: 2em;
-     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-     margin-bottom: 20px; }
+/* Cabeçalho */
+header {
+  background-color: #4caf50; /* Verde sustentável */
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 1em 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
-#map { height: 500px;
-      width: 100%;
-      border-radius: 10px;
-      border: 2px solid #4caf50; /* Verde mais suave */
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra elegante */ }
+header h1 {
+  font-size: 1.8em;
+  margin-bottom: 0.2em;
+}
 
+header p {
+  font-size: 1em;
+  margin-top: 0.2em;
+}
+
+/* Mapa */
+main {
+  padding: 1em;
+  width: 100%;
+  max-width: 1100px;
+}
+
+#map {
+  height: 470px;
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid #4caf50;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Rodapé */
+footer {
+  background-color: #4caf50;
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 0.5em 0;
+  font-size: 0.9em;
+  position: fixed;
+  bottom: 0;
+}
+
+/* Loading */
+#loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3; /* Cor cinza-clara */
+  border-top: 6px solid #4caf50; /* Verde principal */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
