@@ -40,7 +40,7 @@
   //}
 //});
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Coordenadas fixas para Balneário Camboriú
   var lat = -27.0000; // Latitude de Balneário Camboriú
   var lon = -48.6300; // Longitude de Balneário Camboriú
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("loading").style.display = "none";
   document.getElementById("map").style.display = "block";
 
-  // Inicializa o mapa em Balneário Camboriú
+  // Inicializa o mapa centralizado em Balneário Camboriú
   var map = L.map('map').setView([lat, lon], 13);
 
   // Camada de tiles do OpenStreetMap
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
     maxZoom: 19
   }).addTo(map);
 
-  // Marcador "Você está aqui" fixo em Balneário Camboriú
+  // Adiciona o marcador fixo "Você está aqui"
   L.marker([lat, lon]).addTo(map).bindPopup("Você está aqui").openPopup();
 
   // Ícone personalizado para os pontos de coleta
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
   ];
 
   // Adiciona os marcadores dos pontos de coleta
-  pontos.forEach(function(ponto) {
+  pontos.forEach(function (ponto) {
     L.marker([ponto.lat, ponto.lon], { icon: iconRecycle }).addTo(map).bindPopup(ponto.descricao);
   });
 });
