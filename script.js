@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
+      var lat = -27.0000; // Latitude fixa para Balneário Camboriú
+      var lon = -48.6300; // Longitude fixa para Balneário Camboriú
       // Oculta o carregamento e exibe o mapa
       document.getElementById("loading").style.display = "none";
       document.getElementById("map").style.display = "block";
@@ -13,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
         maxZoom: 19
       }).addTo(map);
 
+      //L.marker([lat, lon]).addTo(map).bindPopup("Você está aqui").openPopup();
+      // Marcador "Você está aqui"
       L.marker([lat, lon]).addTo(map).bindPopup("Você está aqui").openPopup();
 
       var iconRecycle = L.icon({
