@@ -41,20 +41,23 @@
 //});
 
 document.addEventListener("DOMContentLoaded", function() {
-  var lat = -27.0000; // Latitude fixa para Balneário Camboriú
-  var lon = -48.6300; // Longitude fixa para Balneário Camboriú
+  // Coordenadas fixas para Balneário Camboriú
+  var lat = -27.0000; // Latitude de Balneário Camboriú
+  var lon = -48.6300; // Longitude de Balneário Camboriú
 
   // Oculta o carregamento e exibe o mapa
   document.getElementById("loading").style.display = "none";
   document.getElementById("map").style.display = "block";
 
+  // Inicializa o mapa em Balneário Camboriú
   var map = L.map('map').setView([lat, lon], 13);
 
+  // Camada de tiles do OpenStreetMap
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19
   }).addTo(map);
 
-  // Marcador "Você está aqui"
+  // Marcador "Você está aqui" fixo em Balneário Camboriú
   L.marker([lat, lon]).addTo(map).bindPopup("Você está aqui").openPopup();
 
   // Ícone personalizado para os pontos de coleta
@@ -65,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
     popupAnchor: [0, -32]
   });
 
-  // Pontos de coleta fixos
+  // Pontos de coleta fictícios próximos a Balneário Camboriú
   var pontos = [
     { lat: -27.0100, lon: -48.6350, descricao: "Ponto de Coleta 1" },
     { lat: -27.0150, lon: -48.6400, descricao: "Ponto de Coleta 2" },
@@ -74,8 +77,9 @@ document.addEventListener("DOMContentLoaded", function() {
   ];
 
   // Adiciona os marcadores dos pontos de coleta
-  pontos.forEach(function (ponto) {
+  pontos.forEach(function(ponto) {
     L.marker([ponto.lat, ponto.lon], { icon: iconRecycle }).addTo(map).bindPopup(ponto.descricao);
   });
 });
+
 
