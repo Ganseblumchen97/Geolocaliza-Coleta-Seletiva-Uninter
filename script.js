@@ -10,7 +10,7 @@
       //var map = L.map('map').setView([lat, lon], 13);
 
       //L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19
+        //maxZoom: 19
       //}).addTo(map);
 
       //L.marker([lat, lon]).addTo(map).bindPopup("Você está aqui").openPopup();
