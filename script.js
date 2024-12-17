@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
       
       //var lat = position.coords.latitude;
       //var lon = position.coords.longitude;
-      var map = L.map('map').setView([lat, lon], 13);
+      //var map = L.map('map').setView([lat, lon], 13);
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19
