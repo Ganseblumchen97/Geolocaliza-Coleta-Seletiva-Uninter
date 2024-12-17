@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+//document.addEventListener("DOMContentLoaded", function() {
   //if (navigator.geolocation) {
     //navigator.geolocation.getCurrentPosition(function(position) {
       // Oculta o carregamento e exibe o mapa
