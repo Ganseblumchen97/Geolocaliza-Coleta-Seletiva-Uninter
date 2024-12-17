@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("loading").style.display = "none";
       document.getElementById("map").style.display = "block";
       
-      var lat = position.coords.latitude;
-      var lon = position.coords.longitude;
+      //var lat = position.coords.latitude;
+      //var lon = position.coords.longitude;
       var map = L.map('map').setView([lat, lon], 13);
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
